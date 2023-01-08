@@ -7,10 +7,6 @@ Proposed Solution -
 We have built a Tourism Application using Django Backend Framework; where one can book a package for his/her holiday destination. We used HTML CSS and JavaScript to create the UI, and used Django as a backend to link the database with the UI and for API.
 
 ![image](https://user-images.githubusercontent.com/56445629/211186391-e166e8db-daf1-498c-b7f2-8c7a900041a2.png)
-
 ![image](https://user-images.githubusercontent.com/56445629/211186395-d7817945-c038-43f7-aee5-477860255cb3.png)
-
 ![image](https://user-images.githubusercontent.com/56445629/211186396-a844acfe-76cf-4e79-a131-2c85c59856d5.png)
-
 ![image](https://user-images.githubusercontent.com/56445629/211186401-c2232939-cbc4-4850-84ff-e44cff77d56c.png)
-
