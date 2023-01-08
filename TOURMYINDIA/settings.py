@@ -86,8 +86,8 @@ if os.getenv('GAE_APPLICATION',None):
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'HOST': '/cloudsql/django-application-tourism-app:asia-south1:polls-instance',
-            'USER': 'mitanshu',
-            'PASSWORD': 'User@352001',
+            'USER': '',
+            'PASSWORD': '',
             'NAME': 'main',
         }
     }
@@ -97,8 +97,8 @@ else:
             'ENGINE': 'django.db.backends.sqlite3',
             'HOST': '127.0.0.1',
             'PORT': '3306',
-            'USER': 'root',
-            'PASSWORD': 'User@352001',
+            'USER': '',
+            'PASSWORD': '',
             'NAME': 'db.sqlite3',
         }
     }
@@ -146,8 +146,8 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
 
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT = 587  #465
-EMAIL_HOST_USER = 'mitanshuholkar35@gmail.com'
-EMAIL_HOST_PASSWORD = 'payqvtbqzuzbwzds'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
 
 # Internationalization
