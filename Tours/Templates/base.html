@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>
+    <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css” />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/fstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loginPopup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/quotePopup.css' %}">
+    
+    {% block css %}{% endblock css %}
+    <title>Tour my india</title>
+    <style>
+        .nav { margin-bottom: 0; }
+.nav > li.dropdown.open { position: static; }
+.nav > li.dropdown.open .dropdown-menu {display:table; width: 100%; text-align: center; left:0; right:0; }
+.nav-item .dropdown-menu>li { display: table-cell; }
+    </style>
+</head>
+
+<body>
+
+    <!-- partial:index.partial.html -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: absolute; width: 100vw;">
+    <div class="container-fluid">
+      <a class="navbar-brand" style="margin-left:5%;"  href="{% url 'Home' %}"><img src="{% static 'images/Travellogo.webp' %}" style="width: 7%;" alt="Logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="min-width:20px;">
+          <li class="nav-item">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" 
+                style="color: white; padding-left: 20%;">
+                  Packages
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:rgba(255, 255, 255,.73); margin-right: 10%; width: 870px;">
+                  {% if north_india %}
+                  <li><a class="dropdown-item" href="#" style="color: #FF543E; text-decoration: none;"> North India</a>
+                    <ul type="none">
+
+                      {% for i in north_india %}
+                      <li><a href="{% url 'packages' city=i.city_name %}" style="text-decoration: none;">{{i.city_name}}</a></li>
+                      {% endfor %}
+                        {% comment %} <li class="more"><a href="#" style="text-decoration: underline;"><span>More...</span></a></li> {% endcomment %}
+                        
+                    </ul>
+                </li>  {% endif %}
+                {% if south_india %}
+                  <li><a class="dropdown-item" href="#" style="color: #FF543E; text-decoration: none;"> South India</a>
+                    <ul type="none">
+                      {% for i in south_india %}
+                      <li><a href="{% url 'packages' city=i.city_name %}" style="text-decoration: none;">{{i.city_name}}</a></li>
+                      {% endfor %}
+                    {% comment %} <li class="more"><a href="#" style="text-decoration: underline;"><span>More...</span></a></li> {% endcomment %}
+                    </ul>
+                </li>
+                {% endif %}
+                {% if east_india %}
+                  <li><a class="dropdown-item" href="#" style="color: #FF543E; text-decoration: none;"> East India</a>
+                    <ul type="none">
+                      {% for i in east_india %}
+                      <li><a href="{% url 'packages' city=i.city_name %}" style="text-decoration: none;">{{i.city_name}}</a></li>
+                      {% endfor %}
+                        {% comment %} <li class="more"><a href="#"style="text-decoration: underline;"><span>More...</span></a></li> {% endcomment %}
+                        </ul>
+                </li>
+                {% endif %}
+                {% if west_india %}
+                  <li><a class="dropdown-item" href="#" style="color: #FF543E; text-decoration: none;"> West India</a>
+                    <ul type="none">
+                      {% for i in west_india %}
+                      <li><a href="{% url 'packages' city=i.city_name %}" style="text-decoration: none;">{{i.city_name}}</a></li>
+                      {% endfor %}
+                        {% comment %} <li class="more"><a href="#" style="text-decoration: underline;"><span>More...</span></a></li> {% endcomment %}
+                        </ul>
+                </li>
+                {% endif %}
+                {% if central_india %}
+                  <li><a class="dropdown-item" href="#" style="color: #FF543E; text-decoration: none;"> Central India </a>
+                    <ul type="none">
+                        {% for i in central_india %}
+                        <li><a href="{% url 'packages' city=i.city_name %}" style="text-decoration: none;">{{i.city_name}}</a></li>
+                        {% endfor %}
+                        {% comment %} <li class="more"><a href="#" style="text-decoration: underline;"><span>More...</span></a></li> {% endcomment %}
+                        </ul>
+                </li>
+                {% endif %}
+                {% if union_territories %}
+                  <li><a class="dropdown-item" href="#" style="color: #FF543E; text-decoration: none;"> Union Territories</a>
+                    <ul type="none">
+                      {% for i in union_territories %}
+                      <li><a href="{% url 'packages' city=i.city_name %}" style="text-decoration: none;">{{i.city_name}}</a></li>
+                      {% endfor %}
+                        </ul>
+                </li>
+                {% endif %}
+                </ul>
+              </li>
+          </li>
+          <li class="nav-item">
+            <!-- <a class="nav-link active" aria-current="page" href="#">Holiday Ideas</a> -->
+            <li class="nav-item dropdown" style="padding-left: 20%;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" 
+                style="color: white; ">
+                  Places to Stay
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:rgba(255, 255, 255,.73); width: 740px;">
+                  {% if city_wise %}
+                  <li><a class="dropdown-item" href="#" style="color: #FF543E; text-decoration: none;"> City Wise</a>
+                    <ul type="none">
+
+                      {% for i in city_wise %}
+                      <li><a href="{% url 'placestostay' id=i.id%}" style="text-decoration: none;">{{i.city_name}}</a></li>
+                      {% endfor %}
+                        {% comment %} <li class="more"><a href="#" style="text-decoration: underline;"><span>More...</span></a></li> {% endcomment %}
+                        
+                    </ul>
+                </li>  {% endif %}
+                {% if wildlife %}
+                <li><a class="dropdown-item" href="#" style="color: #FF543E; text-decoration: none;"> Wildlife Resorts</a>
+                  <ul type="none">
+
+                    {% for i in wildlife %}
+                    <li><a href="{% url 'placestostay' id=i.id%}" style="text-decoration: none;">{{i.city_name}}</a></li>
+                    {% endfor %}
+                      {% comment %} <li class="more"><a href="#" style="text-decoration: underline;"><span>More...</span></a></li> {% endcomment %}
+                      
+                  </ul>
+              </li>  {% endif %}
+              {% if beach %}
+              <li><a class="dropdown-item" href="#" style="color: #FF543E; text-decoration: none;"> Beach Resorts</a>
+                <ul type="none">
+
+                  {% for i in beach %}
+                  <li><a href="{% url 'placestostay' id=i.id%}" style="text-decoration: none;">{{i.city_name}}</a></li>
+                  {% endfor %}
+                    {% comment %} <li class="more"><a href="#" style="text-decoration: underline;"><span>More...</span></a></li> {% endcomment %}
+                    
+                </ul>
+            </li>  {% endif %}
+            {% if hotels %}
+            <li><a class="dropdown-item" href="#" style="color: #FF543E; text-decoration: none;"> Luxury Hotels</a>
+              <ul type="none">
+
+                {% for i in hotels %}
+                <li><a href="{% url 'placestostay' id=i.id%}" style="text-decoration: none;">{{i.city_name}}</a></li>
+                {% endfor %}
+                  {% comment %} <li class="more"><a href="#" style="text-decoration: underline;"><span>More...</span></a></li> {% endcomment %}
+                  
+              </ul>
+          </li>  {% endif %}
+                </ul>
+              </li>
+          </li>
+          <li class="nav-item">
+            <!-- <a class="nav-link active" aria-current="page" href="#">Places to Stay</a> -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                 style="color: white; padding-left: 80%;">
+                    Holiday Ideas
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:rgba(255, 255, 255,.73); width: 140px;">
+                  <!-- <li><a class="dropdown-item" href="#" style="color: #FF543E; text-decoration: none;"> City-wise</a> -->
+                    <ul type="none">
+                      {% for i in holiday_ideas %}
+                        <li><a href="{% url 'holiday_ideas' type=i.city_name %}" style="text-decoration: none;">{{i.city_name}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>  
+                </ul>
+            </li>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-menu"> 
+            {%if user.is_authenticated %}
+          <li class="nav-item dropdown" style="padding-left:500%; ">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user" style="color:#ffff;"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:rgba(255, 255, 255, 0.93);">
+              {% comment %} <li><a class="dropdown-item" href="{%url 'Home'%}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li> {% endcomment %}
+              <li><a class="dropdown-item" href="{%url 'showprofile'%}"><i class="fa fa-bars" aria-hidden="true"></i> Profile</a></li>
+              {% comment %} <li><a class="dropdown-item" href="{%url 'showprofile'%}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Profile</a></li> {% endcomment %}
+              <li><hr class="dropdown-divider"></li>
+              <!-- <li><a class="dropdown-item" href="{%url 'handlelogout'%}"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li> -->
+            </ul>
+          </li>
+          <li style="padding-left:20%;">
+            <a class="login-trigger" href="{%url 'handlelogout'%}"> 
+              <button style="padding:15%;
+                border-radius: 20px 20px 20px 20px;
+                background-color: transparent;
+                color: white;
+                border: 2px solid white;">Logout</button></a>
+          </li>
+
+          {%else%}
+          <li class="nav-item" style="margin-top: 5%; margin-right: 3%; padding-left: 220%;">
+                <!-- Button trigger modal -->
+                
+                <a class="login-trigger" data-bs-toggle="modal" data-bs-target="#login" href="#">
+                  <button style="padding: 7%;
+                                  border-radius: 20px 20px 20px 20px;
+                                  background-color: transparent;
+                                  color: white;
+                                  border: 2px solid white;">Login/Register</button></a>
+                
+                <!-- Modal -->
+                <div id="login" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-body">
+                        <a class="btn" data-bs-dismiss="modal" aria-label="Close" style="float: right;"><button>Back</button></a>
+                        <div class="container" id="container">
+                            <div class="form-container sign-up-container">
+                                <form action="{%url 'register' %}" method="post">
+                                  {% csrf_token %}
+                                    <h1 style="color: #005555;">Create Account</h1>
+                                    <div class="social-container">
+                                        <a href="{% url 'social:begin' 'facebook' %}" class="social"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="{% url 'social:begin' 'google-oauth2' %}" class="social"><i class="fab fa-google-plus-g"></i></a>
+                                        <a href="{% url 'social:begin' 'linkedin-oauth2' %}" class="social"><i class="fab fa-linkedin-in"></i></a>
+                                    </div> 
+                                    <span>or use your email for registration</span>
+                                    <input type="text" name="username" placeholder="Username" />
+                                    <input type="email" name="email" placeholder="Email" />
+                                    <input type="password" name="pass1" placeholder="Password" />
+                                    <input type="password" name="pass2" placeholder="Confirm Password" />
+                                    <button type="submit">Sign Up</button>
+                                </form>
+                            </div>
+                            <div class="form-container sign-in-container">
+                                <form action="{%url 'login'%}" method="post">
+                                  {% csrf_token %}
+                                    <h1 style="color: #005555;">Sign in</h1>
+                                    <div class="social-container">
+                                        <a href="{% url 'social:begin' 'facebook' %}" class="social"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="{% url 'social:begin' 'google-oauth2' %}" class="social"><i class="fab fa-google-plus-g"></i></a>
+                                        <a href="{% url 'social:begin' 'linkedin-oauth2' %}" class="social"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                    <span>or use your account</span>
+                                    <input type="text" placeholder="Username" name="username" />
+                                    <input type="password" placeholder="Password" name="password" />
+                                    <a href="{% url 'reset_password' %}">Forgot your password?</a>
+                                    <button type="submit">Sign In</button>
+                                </form>
+                            </div>
+                            <div class="overlay-container">
+                                <div class="overlay">
+                                    <div class="overlay-panel overlay-left">
+                                        <img src="{%static 'images/bro.svg' %}" style="width: 100%;" alt="">
+                                        <p>To keep connected with us please login with your personal info</p>
+                                        <button class="ghost" id="signIn">Sign In</button>
+                                    </div>
+                                    <div class="overlay-panel overlay-right">
+                                        <img src="{%static 'images/bro2.svg' %}" style="width: 100%;" alt="">
+                                        <p>Enter your personal details and start journey with us</p>
+                                        <button class="ghost" id="signUp">Sign Up</button>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </li>
+         {%endif%}
+       </ul>
+      </div>
+      
+    </div>
+  </nav>
+  {% block body %}{% endblock body %}
+   <!-- Footer -->
+   <footer class="footer" style="background-color: #005555;">
+    <div class="container">
+    <div class="row" id="mess" style="margin-top: 3%;">
+        <div class="footer-col" id="jelly">
+            <div class="row">
+                <a href="#"><img  class="logoFooter" src="{% static 'images/Travellogo.webp' %}" style="width: 7%" alt="logo">
+                </a> 
+            </div>  
+        </div>
+        <div id="hell" class="footer-col">
+            <h3 style="color: #fff;">Social Media</h3>
+            <ul>
+                <li><a href="#" target="_blank"><i class="bi bi-instagram"></i> &nbsp; Instagram</a></li>
+                <li><a href="#" target="_blank"><i class="bi bi-facebook"></i>&nbsp;&nbsp; Facebook</a></li>
+                <li><a href="#" target="_blank"><i class="bi bi-twitter"></i> &nbsp; Twitter</a></li>                   
+                <li><a href="#" target="_blank"><i class="bi bi-youtube"></i> &nbsp; Youtube</a></li>
+            </ul>
+        </div>
+        <div id="hell" class="footer-col">
+            <h3 style="color: #fff;">Explore</h3>
+            <ul>
+                <li><a href="#" target="_blank" > &nbsp; Customer Reviews</a></li> 
+                <li><a href="#" target="_blank" > &nbsp; About Us</a></li> 
+                <li><a href="#" target="_blank" > &nbsp; Rent a Car</a></li> 
+                <li><a href="#" target="_blank" > &nbsp; Book a Stay</a></li> 
+            </ul>
+        </div>
+        <div id="hell" class="footer-col">
+            <h3 style="color: #fff;">Legal Policies</h3>
+            <ul>
+                <li><a href="#" target="_blank" > &nbsp; Terms and Conditions</a></li> 
+                <li><a href="#" target="_blank" > &nbsp; Disclaimer</a></li> 
+            </ul>
+        </div>
+        <div id="hell" class="footer-col">
+            <h3 style="color: #fff;">Contact Us</h3>
+            <ul>
+                <li><i class="bi bi-envelope"></i> &nbsp; Mail</li>                   
+            
+            </ul>
+        </div>
+    </div>
+    </div>
+    
+    </footer>
+<!-- End of Footer --> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js" integrity="sha512-eP8DK17a+MOcKHXC5Yrqzd8WI5WKh6F1TIk5QZ/8Lbv+8ssblcz7oGC8ZmQ/ZSAPa7ZmsCU4e/hcovqR8jfJqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
+    <script  src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/loginPopup.js' %}"></script>
+
+
+    <script>
+         $('.packages').slick({
+dots: true,
+accessibility: true,
+arrows:true,
+infinite:true,
+autoplay:true,
+speed: 300,
+slidesToShow: 4,
+
+slidesToScroll: 1,
+responsive: [
+  {
+    breakpoint: 1000,
+    settings: {
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      infinite: true,
+      dots: true
+    }
+  },
+  {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 1
+    }
+  },
+  {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 1,
+      centerMode:true,
+      centerPadding:'90px',
+      slidesToScroll: 1
+    }
+  }
+]
+});
+    </script>
+    {% block script %}{% endblock script %}
+</body>
+
+</html>

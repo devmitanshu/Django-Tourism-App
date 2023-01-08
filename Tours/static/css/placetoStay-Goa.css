@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Mulish:wght@300;400&family=Nunito+Sans&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+body {
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.uknowme{
+    max-width: fit-content;
+    padding: 0%;
+    position: relative;
+    top: -60px;
+}
+
+.banner{
+    width: 100%;
+    position: relative;
+    z-index: -1;
+}
+
+.hero-content-pts {
+    color: white;
+    top: 40%;
+    margin-left: 8rem;
+    position: absolute;
+}
+.hero-content-pts h1 {
+    font-family: 'Lato';
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 51px;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+}
+
+.hero-content-pts p {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.abt-content-pts p{
+    font-size: 1rem;
+    font-family: lato;
+    text-align: center;
+    margin-left: 8%;
+    margin-right: 8%;
+    padding-top: 4%;
+    padding-bottom: 3%;
+}
+
+/* .hero-section-pts img {
+    width: 100%;
+    max-width: fit-content;
+    position: relative;
+    top: 0;
+    left: 0;
+    
+    
+}
+
+
+
+} */
+.slider-pts h1{
+    font-size: 2.4rem;
+    font-family: lato;
+    padding-top: 3%;
+}
+
+.comfort-pts{
+    margin-top: 10%;
+}
+.comfort-pts h1{
+    font-size: 2.7rem;
+    font-family: lato-bold;
+    padding-top: 8%;
+    margin-left: 4%;
+    font-style:italic;
+}
+
+.comfort-pts p{
+    font-size: 1.1rem;
+    font-family: lato;
+    margin-left: 4%;
+    padding-top: 3%;
+
+}
+
+
+.poi{
+    padding-top: 33.33%;
+    padding-bottom: 33.33%;
+    background: url(../images/Comfort-pts.svg);
+    background-size: cover;
+    background-size: 100% 100%;
+}
+#comfuss{
+    width: 60%;
+    align-self: center;
+}
+
+#fuss{
+    width: 40%;
+    align-self: center;
+}
+
+#asa{
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+@media screen and (max-width:1200px) {
+    .banner{
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width:800px) {
+    #comfuss{
+        width: 100%;
+    }
+    
+    #fuss{
+        width: 100%;
+    }
+
+    .banner{
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .hero-content-pts {
+        top: 25%;
+        margin-left: 4rem;
+    }
+    .hero-content-pts h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content-pts p {
+        font-weight: 300;
+        font-size: 0.9rem;
+        line-height: 8px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .hero-content-pts {
+        top: 20%;
+        margin-left: 2rem;
+    }
+    .hero-content-pts h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content-pts p {
+        font-weight: 300;
+        font-size: 0.9rem;
+        line-height: 8px;
+    }
+}

@@ -1,0 +1,436 @@
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+html{
+    font-size: 92.5%;
+}
+
+body{
+    background-image: url(../images/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100vh;
+}
+
+.show {
+    left: 0
+}
+
+.brri{
+    width: 100%;
+    height:60px;
+    background-image: linear-gradient(to right,#0D0213, #cb6cfd, #0D0213);
+    position: relative;
+    top: -60px;
+    z-index: 3;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 7rem;
+    background: #005555;
+    padding: 0.7rem 1rem;
+    transition: all 0.5s ease;
+}
+
+.sidebar.close{
+    width: 66px;
+}
+
+.sidebar ul{
+    list-style-type: none;
+    margin-top: 1.4rem;
+}
+
+.sidebar .toggle{
+    position: absolute;
+    top: 5.2rem;
+    right: -10%;
+    transform: translateY(-50%);
+    height: 2rem;
+    width: 2rem;
+    background: #0D0213;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 22px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.close .toggle{
+    top: 4.5rem;
+    right: -19%;
+    transform: rotate(180deg);
+}
+
+.naaavbar{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5.7rem;
+}
+
+.naaavbar button{
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    width: 9rem;
+    padding: 1rem;
+    text-align: center;
+    color: black;
+    background-color: #F2E7E7;  
+    position: absolute;
+    transition: 0.3s;
+    left: -0.9rem; 
+    border: none;
+}
+
+.naaavbar.bok button{
+    left: -7.7rem;
+    background-color: #005555;
+    color: #005555;
+}
+
+#Home{
+    top: 11.5rem;
+}
+
+#About{
+    top: 16.6rem;
+}
+
+#Services{
+    top: 21.7rem;
+}
+
+#Contact_Us{
+    top: 26.8rem;
+}
+
+.sidebar .naaavbar .joke{
+    position: absolute;
+    right: -32%;
+    top: 1.75rem;
+    transform: translateY(-50%);
+    height: 4.05rem;
+    width: 4.05rem;
+    background: #0D0213;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 35px;  
+}
+
+.naaavbar button:hover{
+    left: -0.9rem;
+    background-color: #F2E7E7;
+    color: black;
+}
+
+
+
+.main{
+    float: right;
+    width: 90%;
+    transition: all 0.5s ease;
+}
+
+.main.xyz{
+    width: 96%;
+}
+
+.profile{
+    height: 12rem;
+    width: 12rem;
+    border-radius: 6rem;
+    background-image: url(../images/p_default.png);
+    background-color: white;
+    background-size: cover;
+    padding: 0%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 180px;
+/* identical to box height */
+    letter-spacing: 0.07em;
+    color: #F1EAEA;
+}
+
+#image_input{
+    width: 100%;
+    position: relative;
+    opacity: 0%;
+}
+
+.chpro{
+    background-color: #4c4c4ca4;
+    position: absolute;
+    height: 12rem;
+    width: 12rem;
+    border-radius: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.user{
+    margin: 6rem;
+    height: auto;
+    padding: 0%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.ppad{
+    padding: 4%;
+}
+
+.ppad hr{
+    height: 3px ;
+    color: white;
+}
+
+.ppad h1{
+    color: yellow;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: #FEE891;
+    width: 85%;
+    padding-bottom: 20px;
+}
+
+.but{
+    width: 15%;
+    height: 26px;
+   
+    font-size: small;
+}
+
+.ppad button{
+    width: 100%;
+    border-radius: 10.5px;
+    border: none;
+
+}
+
+.alonso{
+    width: 80%;
+    float: right;
+    border: none;
+    border-radius: 7px;
+}
+
+.profile_edit ,.profile_save,.rc_trips{
+    width: 45rem;
+    height: auto;
+    background-color: #005555;
+    border-radius: 10px;
+    color: white;
+}
+
+.lgd_edit, .lgd_save{
+    width: 45rem;
+    height: auto;
+    background-color: #005555;
+    border-radius: 10px;
+    color: white;
+    
+}
+
+.profile_save,.rc_trips, .lgd_edit, .lgd_save{
+    display: none;
+}
+
+.profile_save hr,.lgd_save hr{
+    height: 0px ;
+}
+
+.ppad .textbox{
+    background-color: white;
+}
+
+.box{
+    width: 210px;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: white;
+    display: inline-block;
+}
+
+.slide-img{
+    height: 135.5px;
+}
+
+.slide-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.detail-box{
+    padding: 4%;
+    padding-top: 6%;
+    text-align: left;
+}
+
+.place{
+    color: #005555;
+    font-weight: 650;
+    font-size: 1.2rem;
+    line-height: 26px;
+}
+
+.timeprice{
+    color:  #828282;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 150.6%;
+    padding-top: 3%;
+}
+
+.knowmore{
+    padding: 3% 0 3%;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 150.6%;
+}
+
+.kn{
+    color: #077EA3;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.knowmore a:hover{
+    color: #077EA3;
+    padding-left: 0.5rem;
+}
+
+.rc_trips .box{
+    padding-left: 0%;
+    padding-right: 0%;
+    margin: 0% 5% 10% 5%  ;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex: auto;
+}
+
+.baxter{
+    text-align:center;
+}
+
+@media screen and (min-width:1700px){
+    .main{
+        width: 92%;
+    }
+    .main.xyz{
+        width: 96%;
+    }
+}
+
+@media screen and (max-width:1025px){
+    .main{
+        width: 86%;
+    }
+    .main.xyz{
+        width: 93%;
+    } 
+}
+
+@media screen and (max-width:900px){
+    .main{
+        width: 75%;
+    }
+
+    .alonso{
+        width: 70%;
+    }
+
+    .but{
+        width: 20%;
+    }
+    .ppad h1{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .main{
+        width: 80%;
+    }
+    .main.xyz{
+        width: 90%;
+    }
+
+    .naaavbar button{
+        left: -1rem;
+        background-color: #F2E7E7;  
+    }
+
+    .naaavbar.bok button{
+        left: -7.5rem;
+    }
+
+    .naaavbar button:hover{
+        left: -1rem;
+        background-color: #F2E7E7;  
+    }
+
+    .sidebar{
+        width: 6rem;
+    }
+
+    .sidebar.close{
+        width: 2.5rem;
+        padding-right: 0%;
+    }
+
+    .sidebar .toggle{
+        right: -21%;
+        top: 5.2rem;
+    }
+
+    .sidebar.close .toggle{
+        top: 4.2rem;
+        left: 5%;
+    }
+
+    .alonso{
+        width: 90%;
+    }
+
+    .profile_edit, .profile_save{
+        height: 300px;
+    }
+
+    .profile_edit hr,.lgd_edit hr{
+        height: 0%;
+    }
+
+    .lgd_edit, .lgd_save{
+        height: 200px;
+    }
+
+    .but{
+        width: 40%;
+    }
+    .ppad h1{
+        width: 60%;
+    }
+}

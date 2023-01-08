@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Mulish:wght@300;400&family=Nunito+Sans&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hero-section-mypackage img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-section-mypackage {
+    /* width: 10000px; */
+    padding: 0;
+    height: 500px;
+    width: 100%;
+    font-family: 'lato'; 
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+
+}
+
+.hero-content-mypackage {
+    color: white;
+    margin-top: 15rem;
+    margin-left: 8rem;
+    position: relative;
+}
+
+.hero-content-mypackage h1 {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 51px;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.hero-content-mypackage p {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 24px;
+    /* or 133% */
+
+    letter-spacing: 0.03em;
+
+    color: rgba(255, 255, 255, 0.72);
+
+}
+
+.btn-content {
+    text-decoration: none;
+    color: black;
+    background-color: #F5F5F5;
+    margin: 1rem 0;
+    padding: .85rem;
+    border-radius: 20px 20px 20px 20px;
+    z-index: 999;
+}
+
+.arrow-icon {
+    background-color: black;
+    color: white;
+    margin: 1rem 0;
+    padding: .85rem;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.arrow-icon:hover {
+    color: white;
+}
+
+.about-mypackage h1{
+    font-size: 2.5rem;
+    padding-top: 5%;
+    font-family: lato;
+    color: #FF543E;
+}
+.about-mypackage img{
+    /* padding-top: 3%; */
+    margin-left: 6%;
+    margin-right: 3%;
+    height: 370px;
+    width: 370px;
+}
+.about-mypackage p{
+    font-size: 0.97rem;
+    text-align: justify;
+    padding-left: 3%;
+    margin-right: 3%;
+    
+}
+.slider-mypackage h1{
+    font-size: 2.4rem;
+    font-family: lato;
+    padding-top: 1.5%;
+}
+.FAQ-mypackage h1{
+    font-size: 2.4rem;
+    font-family: lato;
+    padding-top: 3%;
+}
+.FAQ-mypackage p{
+    font-size: 22px;
+    font-family: lato;
+    margin-left: 4%;
+}
+.FAQ-mypackage h4{
+    font-size: 16px;
+    text-align: justify;
+    font-family: lato;
+    margin-left: 7%;
+    margin-right: 12%;
+}
+.things-mypackage {
+    font-size: 2rem;
+    font-family: lato;
+    padding-top: 3%;
+}
+.bottom-mypackage img{
+    width: 100%;
+    max-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.bottom-mypackage {
+    padding: 0;
+    height: 80vh;
+    font-family: 'lato'; 
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+
+}
+
+.bottom-content-mypackage {
+    color: white;
+    margin-top: 15rem;
+    margin-left: 8rem;
+}
+
+.bottom-content-mypackage h1 {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 51px;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+}
+
+.bottom-content-mypackage p {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 24px;
+    /* or 133% */
+
+    letter-spacing: 0.03em;
+
+    color: rgba(255, 255, 255, 0.72);
+
+}
+
+.bottom-btn-content {
+    text-decoration: none;
+    color: #00A2CE;
+    background-color: rgb(0, 0, 0, 0.6);
+    margin: 1rem 0;
+    padding: .85rem;
+    border-radius: 20px 20px 20px 20px;
+}
+
+@media screen and (max-width:415px) {
+.hero-section-mypackage {
+    padding: 0;
+    width: 100%;
+    height: 240px;
+    font-family: 'lato'; 
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+}
+.hero-section-mypackage img {
+    width: 100% !important;
+    height: 300px !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block !important;
+}
+.hero-content-mypackage {
+    color: white;
+    margin-left:4rem;
+    position: relative;
+    margin-top: 7rem;
+}
+
+.hero-content-mypackage h1 {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 800;
+    font-size: 9px;
+    line-height: 10px;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    position: relative;
+    
+}
+
+.hero-content-mypackage p {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 12px;
+    position: relative;
+    /* or 133% */
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.72);
+
+}
+
+.btn-content {
+    text-decoration: none;
+    color: black;
+    background-color: #F5F5F5;
+    margin: 1rem 0;
+    padding: .5rem;
+    border-radius: 20px 20px 20px 20px;
+    /* z-index: 999; */
+    font-size: 0.8rem !important;
+}
+
+.arrow-icon {
+    background-color: black;
+    color: white;
+    margin: 1.5rem 0 !important;
+    padding: .5rem;
+    border-radius: 20px 0px 0px 20px;
+    transform:scale(.1, .1) !important;
+    display: none;
+}
+
+.arrow-icon:hover {
+    color: white;
+}
+
+.about-mypackage h1{
+    font-size: 1.5rem;
+    padding-top: 3%;
+    font-family: lato;
+    color: #FF543E;
+}
+.about-mypackage img{
+    padding-top: 4%;
+    margin-left: 12% !important;
+    margin-right: 4% !important;
+    height: 300px;
+    width: 300px;
+    padding-bottom: 4%;
+}
+.about-mypackage p{
+    font-size: 0.7rem;
+    text-align: justify;
+    padding-left: 3%;
+    margin-right: 3%;
+    
+}
+.slider-mypackage h1{
+    font-size: 1.7rem;
+    font-family: lato;
+    padding-top: 1.5%;
+}
+.FAQ-mypackage h1{
+    font-size: 1.8rem;
+    font-family: lato;
+    margin-top: 5%;
+}
+.FAQ-mypackage p{
+    font-size: 11px;
+    font-family: lato;
+    margin-left: 4%;
+}
+.FAQ-mypackage h4{
+    font-size: 10px;
+    text-align: justify;
+    font-family: lato;
+    margin-left: 7%;
+    margin-right: 12%;
+    line-height: 15px;
+}
+.things-mypackage {
+    font-size: 1.6rem;
+    font-family: lato;
+    padding-top: 3%;
+}
+
+.bottom-mypackage img{
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bottom-mypackage {
+    padding: 0;
+    width: 100%;
+    height: 300px;
+    font-family: 'lato'; 
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+
+}
+
+.bottom-content-mypackage {
+    color: white;
+    margin-left:4rem;
+    position: relative;
+    margin-top: 7rem;
+}
+
+.bottom-content-mypackage h1 {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 800;
+    font-size: 9px;
+    line-height: 10px;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.bottom-content-mypackage p {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 12px;
+    position: relative;
+    /* or 133% */
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.72);
+
+}
+
+.bottom-btn-content {
+    text-decoration: none;
+    color: #00A2CE;
+    background-color: rgb(0, 0, 0, 0.6);
+    margin: 1rem 0;
+    padding: .85rem;
+    border-radius: 20px 20px 20px 20px;
+}
+
+}
+ @media screen and (min-width:416px) and (max-width:800px) {
+
+    
+    .hero-section-mypackage {
+        padding: 0;
+        width: 100%;
+        height: 240px;
+        font-family: 'lato'; 
+      -webkit-background-size: cover !important;
+      -moz-background-size: cover !important;
+      -o-background-size: cover !important;
+      background-size: cover !important;
+    }
+    .hero-section-mypackage img {
+        width: 100% !important;
+        height: 300px !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block !important;
+    }
+    .hero-content-mypackage {
+        color: white;
+        margin-left:4rem;
+        position: relative;
+        margin-top: 7rem;
+    
+    }
+    
+    .hero-content-mypackage h1 {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 800;
+        font-size: 9px;
+        line-height: 10px;
+        letter-spacing: 0.06em;
+        color: #FFFFFF;
+        position: relative;
+        
+    }
+    
+    .hero-content-mypackage p {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 12px;
+        position: relative;
+        /* or 133% */
+        letter-spacing: 0.03em;
+        color: rgba(255, 255, 255, 0.72);
+    
+    }
+    
+    
+    .bottom-content-mypackage {
+        color: white;
+        margin-left:4rem;
+        position: relative;
+        margin-top: 7rem;
+        
+    }
+    .bottom-content-mypackage h1 {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 800;
+        font-size: 1.2rem;
+        line-height: 28px;
+        letter-spacing: 0.06em;
+        color: #FFFFFF;
+        position: relative;
+        margin-right: 3% !important;
+    }
+    
+    .bottom-content-mypackage p {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 30px;
+        position: relative; 
+        /* or 133% */
+         letter-spacing: 0.03em;
+        color: rgba(255, 255, 255, 0.72);
+    
+    }
+} 
+@media screen and (min-width:800px) and (max-width:1200px) {
+    
+}

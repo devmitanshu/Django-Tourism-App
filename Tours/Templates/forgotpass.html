@@ -1,0 +1,13 @@
+
+
+<a href="{% url 'Home' %}"> <button>Home</button> </a>
+<form method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="Submit" name="Send email">
+  
+    
+</form>
+
+
+

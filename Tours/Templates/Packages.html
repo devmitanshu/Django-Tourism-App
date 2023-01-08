@@ -1,0 +1,287 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/style-card.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/myPackage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/myPackageCSS.css' %}">
+    {% endblock css %}
+    
+
+
+    {% block body %}
+<div class="col-12">
+
+
+    <section class="row">
+        <div class="hero-section-mypackage" >
+             <div>
+                <img src="/media/{{selected_city.image}}" style=" width: 100%; height: 550px;">
+            </div> 
+
+            <div class="hero-content-mypackage">
+
+                <h1> {{selected_city.tagline}} </h1>
+                <p style="color: white;"><b><I> {{selected_city.city_name}}</I></b>
+                </p>
+                <div style="padding-top: 2%;">
+                    <a href="#todo" class="btn-content"> Explore Me <span style="font-size: 2rem;
+                        transform: scale(.5, 1);"> &#8594</span></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <div class="about-mypackage" style="background-color: #F1EAEA; padding-bottom: 15%;">
+        <center>
+        <h1> About {{selected_city.city_name}}</h1>
+        </center>
+        <span>
+        <img src="/media/{{selected_city.image2}}" style="float: left;">
+        <p style="margin-top: 3%;">{{selected_city.desc}}
+        </p>
+        </span>
+    </div>
+  
+    <div class="slider-mypackage" id="pack" style="background-color: #005555; padding-bottom: 3.5%;">
+        <center>
+        <h1> <span style="color:white ;">Places to visit in  {{selected_city.city_name}}</h1>
+        </center>
+        <!-- partial:index.partial.html -->
+<div class="wrapper">
+    <div class="background">
+      <!-- <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1537132206/news-slider/background.webp" alt=""> -->
+    </div>
+    <div class="item-bg"></div>
+  
+    <div class="news-slider">
+      <div class="news-slider__wrp swiper-wrapper">
+        <div class="news-slider__item swiper-slide">
+          {% for i in selected_packages %}
+          <a href="{% url 'package_info' i=i.id%}" class="news__item">
+            <!-- <div class="news-date">
+              <span class="news-date__title">24</span>
+              <span class="news-date__txt">May</span>
+            </div> -->
+            <div class="news__title" style="color: #ffc40b;">
+              {{i.package_name}}
+            </div>
+  
+            <p class="news__txt" style="color:white;">
+             {{i.description}}
+            </p>
+  
+            <div class="news__img">
+              <img src='/media/{{i.image}}' alt="news">
+            </div>
+          </a>
+          {% if forloop.counter|divisibleby:2 and forloop.counter > 0 and not forloop.last %}</div><div class="news-slider__item swiper-slide">{% endif %}
+            {% if forloop.last and not forloop.counter|divisibleby:2 %} </div> {% endif %}
+          {% endfor %}
+          
+   
+      </div>
+  
+      <div class="news-slider__ctr">
+  
+        <div class="news-slider__arrows">
+          <button class="news-slider__arrow news-slider-prev">
+            <span class="icon-font">
+              <svg class="icon icon-arrow-left"><use xlink:href="#icon-arrow-left"></use></svg>
+            </span>
+          </button>
+          <button class="news-slider__arrow news-slider-next">
+            <span class="icon-font">
+              <svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg>
+            </span>
+          </button>
+        </div>
+  
+        <div class="news-slider__pagination"></div>
+  
+      </div>
+  
+    </div>
+  
+  </div>
+  
+  <svg hidden="hidden">
+    <defs>
+      <symbol id="icon-arrow-left" viewBox="0 0 32 32">
+        <title>arrow-left</title>
+        <path d="M0.704 17.696l9.856 9.856c0.896 0.896 2.432 0.896 3.328 0s0.896-2.432 0-3.328l-5.792-5.856h21.568c1.312 0 2.368-1.056 2.368-2.368s-1.056-2.368-2.368-2.368h-21.568l5.824-5.824c0.896-0.896 0.896-2.432 0-3.328-0.48-0.48-1.088-0.704-1.696-0.704s-1.216 0.224-1.696 0.704l-9.824 9.824c-0.448 0.448-0.704 1.056-0.704 1.696s0.224 1.248 0.704 1.696z"></path>
+      </symbol>
+      <symbol id="icon-arrow-right" viewBox="0 0 32 32">
+        <title>arrow-right</title>
+        <path d="M31.296 14.336l-9.888-9.888c-0.896-0.896-2.432-0.896-3.328 0s-0.896 2.432 0 3.328l5.824 5.856h-21.536c-1.312 0-2.368 1.056-2.368 2.368s1.056 2.368 2.368 2.368h21.568l-5.856 5.824c-0.896 0.896-0.896 2.432 0 3.328 0.48 0.48 1.088 0.704 1.696 0.704s1.216-0.224 1.696-0.704l9.824-9.824c0.448-0.448 0.704-1.056 0.704-1.696s-0.224-1.248-0.704-1.664z"></path>
+      </symbol>
+    </defs>
+  </svg>
+
+  
+    </div>
+    <div class="FAQ-mypackage" style="background-color: #F1EAEA; padding-bottom: 4%;">
+        <center>
+        <h1> Frequently Asked Questions</h1>
+        </center>
+        {% for i in qna %}
+        <p style="padding-top: 4%;">Q. {{i.question}}</p>
+        <h4>{{i.answer}}</h4>
+        {% endfor %}
+    </div>
+    <div class="slider-mypackage" id="todo" style="background-color: #005555; padding-bottom: 4%;">
+        <center>
+        <p class="things-mypackage" style="color:white ;"> Top things to do in {{selected_city.city_name}}</p>
+        </center>
+            <!-- partial:index.partial.html -->
+    <div class="wrapper">
+        <div class="background">
+          <!-- <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1537132206/news-slider/background.webp" alt=""> -->
+        </div>
+        <div class="item-bg"></div>
+      
+        <div class="news-slider">
+          <div class="news-slider__wrp swiper-wrapper">
+            {% for i in topthings %}
+            <div class="news-slider__item swiper-slide">
+              <a href="#" class="news__item">
+                <!-- <div class="news-date">
+                  <span class="news-date__title">24</span>
+                  <span class="news-date__txt">May</span>
+                </div> -->
+                <div class="news__title" style="color: #005555;">
+                  {{i.title}}
+                </div>
+      
+                <p class="news__txt" style="color: #ffc40b;">
+                 {{i.description}}
+                </p>
+      
+                <div class="news__img">
+                  <img src="/media/{{i.image}}" alt="news">
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+      
+           
+          </div>
+      
+          <div class="news-slider__ctr">
+      
+            <div class="news-slider__arrows">
+              <button class="news-slider__arrow news-slider-prev">
+                <span class="icon-font">
+                  <svg class="icon icon-arrow-left"><use xlink:href="#icon-arrow-left"></use></svg>
+                </span>
+              </button>
+              <button class="news-slider__arrow news-slider-next">
+                <span class="icon-font">
+                  <svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg>
+                </span>
+              </button>
+            </div>
+      
+            <div class="news-slider__pagination"></div>
+      
+          </div>
+      
+        </div>
+      
+      </div>
+      
+      <svg hidden="hidden">
+        <defs>
+          <symbol id="icon-arrow-left" viewBox="0 0 32 32">
+            <title>arrow-left</title>
+            <path d="M0.704 17.696l9.856 9.856c0.896 0.896 2.432 0.896 3.328 0s0.896-2.432 0-3.328l-5.792-5.856h21.568c1.312 0 2.368-1.056 2.368-2.368s-1.056-2.368-2.368-2.368h-21.568l5.824-5.824c0.896-0.896 0.896-2.432 0-3.328-0.48-0.48-1.088-0.704-1.696-0.704s-1.216 0.224-1.696 0.704l-9.824 9.824c-0.448 0.448-0.704 1.056-0.704 1.696s0.224 1.248 0.704 1.696z"></path>
+          </symbol>
+          <symbol id="icon-arrow-right" viewBox="0 0 32 32">
+            <title>arrow-right</title>
+            <path d="M31.296 14.336l-9.888-9.888c-0.896-0.896-2.432-0.896-3.328 0s-0.896 2.432 0 3.328l5.824 5.856h-21.536c-1.312 0-2.368 1.056-2.368 2.368s1.056 2.368 2.368 2.368h21.568l-5.856 5.824c-0.896 0.896-0.896 2.432 0 3.328 0.48 0.48 1.088 0.704 1.696 0.704s1.216-0.224 1.696-0.704l9.824-9.824c0.448-0.448 0.704-1.056 0.704-1.696s-0.224-1.248-0.704-1.664z"></path>
+          </symbol>
+        </defs>
+      </svg>
+    
+      
+        </div>
+    </div>
+    <div class="col-12">
+
+
+        <section class="row">
+            <div class="bottom-mypackage" style="  background: url('{% static 'images/CTA BG Image.png' %}') no-repeat center center fixed;">
+                <!-- <div>
+                    <img src="images/Hero BG Image.png">
+                </div> -->
+    
+                <div class="bottom-content-mypackage">
+    
+                    <h1> Plan to visit Uttarakhand? </h1>
+                    <p style="color: white;"><b><I> Get your Custom quote:</I></b>
+                    </p>
+                    <div style="padding-top: 2%;">
+                       <!-- Button trigger modal -->
+                      <a class="bottom-btn-content" data-bs-toggle="modal" data-bs-target="#popup">Click Here</a>
+                        
+                      <!-- Modal -->
+                      <div id="popup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+                      <div class="modal-dialog" style="margin-right: 40%;">
+                        <div class="modal-content">
+                        <div class="modal-body">
+                          <h2 style="font-size: 2rem; font-weight: bold;">Request a <span style="color: #FF543E; font-size: 2rem; font-weight: bold;">Quote</span></h2>
+                          <a class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+                          <div class="container right-panel-active" id="container">
+                            <div class="form-container sign-up-container ">
+                              <form action="mailto:dakshchavan10@gmail.com"  method="post" >
+                                {% csrf_token %}
+                              <!-- <div style="display: flex; flex-direction: row;"> -->
+                                <input name="name"  type="text" placeholder="Your Name" required>
+                                <!-- <input name="country" style="width: 50%;" type="text" placeholder="Select Country" /> -->
+                              <!-- </div> -->
+                              <input name="email" type="email" placeholder="Email" required/>
+                              <textarea name="description" id="desc" cols="10" rows="2" placeholder="Tour Description"></textarea>
+                              <div style="display: flex; flex-direction: row;">
+                                <input style="width: 50%; margin-right: 3%;" name="date" type="date" placeholder="Travel Dates"  required/>
+                                <input style="width: 50%;" name="duration" type="text" placeholder="Duration of Dates" required/>
+                              </div>
+                              <div style="display: flex; flex-direction: row;">
+                                <input name="persons" style="width: 50%; margin-right: 3%;" type="text" placeholder="No.of Person" required/>
+                                <input name="number" style="width: 50%;" type="text" placeholder="Contact No." required/>
+                              </div>
+                              <button onClick="window.location.href='{% url 'thankyou' %}';" type="submit" formaction="{% url 'passengerdetail' %}"  style="margin-top: 3%;">Submit</button>
+                            </form>
+                            </div>
+                            <div class="overlay-container">
+                              <div class="overlay">
+                                <div class="overlay-panel overlay-left">
+                                  <h1>How it Works?</h1>
+                                  <div style="padding-top: 10%;">
+                                    <img style="width: 18%; position: relative;" src="images/icon _plan_.svg" alt="">
+                                    <p>Plan Your Holiday Details</p>
+                                    <img style="width: 18%; position: relative;" src="images/icon _customize_.svg" alt="">
+                                    <p>Get your customised holiday package based on your requirements within 24 Hr</p>
+                                    <img style="width: 18%; position: relative;" src="images/illustration _backpack blue rucksack travel canvas_.svg" alt="">
+                                    <p>Get the deal and start packing the bags!!</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                      </div>
+                        </div>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                </div>
+    
+            </div>
+        </section>
+        {% endblock body %}
+        {% block script %}
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+        <script  src="{% static 'js/script.js' %}"></script>
+        <script src="{% static 'js/navbar.js' %}"></script>
+    <script src="{% static 'js/loginPopup.js' %}"></script>
+        {% endblock script %}
